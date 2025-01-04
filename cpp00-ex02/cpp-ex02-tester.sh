@@ -40,10 +40,14 @@ echo -e "${BLUE}${ROCKET} Starting test...${NC}"
 
 
 echo -e "${YELLOW}${LOADING} Running your program...${NC}"
+#mod this to your program name  
 ./account_test > test_output.txt
 
 
+
 cat test_output.txt | sed 's/\[.*\]/[timestamp]/g' | tr -d '\r' > clean_output.txt
+
+#  if you log is diffirent name you should change the .log  or keep defautl 
 cat 19920104_091532.log | sed 's/\[.*\]/[timestamp]/g' | tr -d '\r' > clean_log.txt
 
 echo -e "${YELLOW}${LOADING} Comparing outputs line by line...${NC}"
